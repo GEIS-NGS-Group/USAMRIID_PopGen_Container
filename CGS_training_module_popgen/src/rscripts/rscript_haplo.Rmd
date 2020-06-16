@@ -1,0 +1,46 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+Setting up the enviornment and reading the data and metadata
+
+```{r echo=FALSE}
+
+library(ape)
+library(pegas)
+library(haplotypes)
+require(igraph)
+require(RColorBrewer)
+
+input <- "/home/guest/projects/makona/results/maff_alignment/Brett424_1_S4_L001_mafft_align.out"
+d <- ape::read.dna(input, format='fasta')
+e <- dist.dna(d)
+h <- pegas::haplotype(d)
+h <- sort(h, what = "label")
+(net <- pegas::haploNet(h))
+ind.hap<-with(
+  stack(setNames(attr(h, "index"), rownames(h))),
+  table(hap=ind, pop=rownames(d)[values])
+)
+
+
+
+
+```
+
+Plot the haplonetwork
+
+```{r echo=FALSE}
+
+
+nt0 <- mjn(h, epsilon = 0, max.n.cost = 10000, prefix = "median.vector_")
+plot(nt0)
+plot(net, size=attr(net, "freq"), scale.ratio=0.9, pie=ind.hap,col=vertex.col)
+legend(8, 1, colnames(ind.hap),col=rainbow(ncol(ind.hap)), pch=19, ncol=1)
+
+#png(paste0(fileTT, "png"),width=800,height=800,units = "px")
+  #print(p1)
+  #dev.off()
+
+
+```

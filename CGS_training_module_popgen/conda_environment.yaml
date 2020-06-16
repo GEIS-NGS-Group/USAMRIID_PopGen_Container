@@ -1,0 +1,24 @@
+name: cgs-popgen-1.0dev
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - conda-forge::python=3.7.3
+  - conda-forge::markdown=3.1.1
+  - conda-forge::pymdown-extensions=6.0
+  - conda-forge::pygments=2.5.2
+  - conda-forge::pigz=2.3.4
+  - conda-forge::psutil=5.7.0
+
+  - bioconda::fastqc=0.11.9
+  - bioconda::samtools=1.9
+  - bioconda::bwa=0.7.17
+  - bioconda::bedtools=2.29.2
+  - bioconda::bcftools=
+  - bioconda::bamtools=
+  - bioconda::mummer=
+  - bioconda::trimmomatic=
+  - bioconda::velvet=
+  - bioconda::quast=
+
