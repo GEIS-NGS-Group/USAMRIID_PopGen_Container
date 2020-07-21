@@ -14,7 +14,7 @@ Infectious diseases are the most common cause of major fatalities of human life.
 These instructions will cover usage information and for the docker container 
 
 ## For downloading docker container please use following URL and instructions
-*[Docker](https://hub.docker.com/repository/docker/rkumar23/cgs-popgen-2020)
+* [Docker](https://hub.docker.com/repository/docker/rkumar23/cgs-popgen-2020)
 
 ## Find Us
 
