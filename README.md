@@ -1,6 +1,6 @@
 # Genomic molecular characterization for viral strains using informatics tools
 
-## CGS, USAMRIID Viral Population Genomics Training Module
+## Genomics, USAMRIID Viral Population Genomics Training Module
 
 ## Objective:  
 The training module will provide the complete bioinformatics workflow for analyzing genomics data using open source tools. The training module uses sequence reads generated using genomics tools such as genomic DNA or RNA sequencing using next generation sequencing technology with objective of characterization of viral strains in outbreak setting. 
