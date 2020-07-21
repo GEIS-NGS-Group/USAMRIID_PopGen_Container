@@ -17,8 +17,13 @@ These instructions will cover usage information and for the docker container
 * [Docker](https://hub.docker.com/repository/docker/rkumar23/cgs-popgen-2020)
 
 ## FAQ and Glossary
+** Developed by Nick Rozak
 * [FAQ](https://github.com/rainakumar/CGS_popgen_training_module/blob/master/FAQ.md)
-* [Glossary][https://github.com/rainakumar/CGS_popgen_training_module/blob/master/glossary.md)
+* [Glossary]([https://github.com/rainakumar/CGS_popgen_training_module/blob/master/glossary.md)
+
+## Detail Documentation
+** Developed by Joshua Richardson
+* [Documents]()
 
 ## Find Us
 
