@@ -18,7 +18,7 @@ These instructions will cover usage information and for the docker container
 
 ## FAQ and Glossary
 * [FAQ](https://github.com/rainakumar/CGS_popgen_training_module/blob/master/FAQ.md)
-* [Glossary]([https://github.com/rainakumar/CGS_popgen_training_module/blob/master/glossary.md)
+* [Glossary](https://github.com/rainakumar/CGS_popgen_training_module/blob/master/glossary.md)
 
 ## Detail Documentation
 * [Documents](https://github.com/rainakumar/CGS_popgen_training_module/tree/master/CGS_training_module_popgen/src/docs)
