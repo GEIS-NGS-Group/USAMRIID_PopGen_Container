@@ -13,13 +13,13 @@ Infectious diseases are the most common cause of major fatalities of human life.
 
 These instructions will cover usage information and for the docker container 
 
-## For downloading docker container please use following URL and instructions
+## For downloading build docker image please use following URL and instructions
 * [Docker](https://hub.docker.com/repository/docker/rkumar23/cgs-popgen-2020)
 
 ## Find Us
 
 * [GitHub](https://github.com/your/repository)
-* [Quay.io](https://quay.io/repository/your/docker-repository)
+* [Docker](https://hub.docker.com/repository/docker/rkumar23)
 
 ## Contributing
 
@@ -37,8 +37,8 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 See also the list of [contributors](https://github.com/your/repository/contributors) who 
 participated in this project.
 
-* Joshua Richardson
 * Nick Rozak
+* Joshua Richardson
 * MAJ Jeffery Kugelman
 
 ## License
@@ -47,5 +47,5 @@ This project is licensed under the Open Source License - see the [LICENSE.md](LI
 
 ## Acknowledgments
 
-* People you want to thank
-* If you took a bunch of code from somewhere list it here
+* all names
+* 
