@@ -16,6 +16,9 @@ These instructions will cover usage information and for the docker container
 ## For downloading build docker image please use following URL and instructions
 * [Docker](https://hub.docker.com/repository/docker/rkumar23/cgs-popgen-2020)
 
+## FAQ and Glossary
+* (
+
 ## Find Us
 
 * [GitHub](https://github.com/your/repository)
