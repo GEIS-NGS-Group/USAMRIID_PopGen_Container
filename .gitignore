@@ -1,0 +1,7 @@
+.DS_Store
+.idea/
+/CGS_training_module_popgen/data/example_data/results/
+CGS_training_module_popgen/data/example_data/samples/raw/Brett413-1_S1_L001_R1_001.fastq.gz
+CGS_training_module_popgen/data/example_data/samples/raw/Brett413-1_S1_L001_R2_001.fastq.gz
+CGS_training_module_popgen/data/example_data/samples/raw/Brett414-1_S2_L001_R1_001.fastq.gz
+CGS_training_module_popgen/data/example_data/samples/raw/Brett414-1_S2_L001_R2_001.fastq.gz
