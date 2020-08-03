@@ -1,48 +1,41 @@
-# our base image
-FROM ubuntu:latest
+FROM continuumio/miniconda
 
-# Install python and pip
-RUN apt-get update && apt-get -y update
-RUN apt-get install -y build-essential python3.6 python3-pip python3-dev
-RUN pip3 -q install pip –upgrade
+RUN apt-get update && apt-get install -y \
+    r-base-dev \
+    libssl-dev \
+    samtools \
+	&& apt-get clean \
+	&& apt-get remove \
+	&& rm -rf /var/lib/apt/lists/*
 
-#Constants
+RUN conda install python=3 -y --quiet -c conda-forge
+RUN conda install markdown -y --quiet -c conda-forge
+RUN conda install pymdown-extensions -y --quiet -c conda-forge
+RUN conda install pygments -y --quiet -c conda-forge
+RUN conda install pigz -y --quiet -c conda-forge
+RUN conda install psutil -y --quiet -c conda-forge
+RUN conda install fastqc -y --quiet -c bioconda
+RUN conda install bwa -y --quiet -c bioconda
+RUN conda install bedtools -y --quiet -c bioconda
+RUN conda install bcftools -y --quiet -c bioconda
+RUN conda install bamtools -y --quiet -c bioconda
+RUN conda install mummer -y --quiet -c bioconda
+RUN conda install trimmomatic -y --quiet -c bioconda
+RUN conda install quast -y --quiet -c bioconda
+RUN conda install mafft -y --quiet -c bioconda
 
-#ARG YAML_VERSION=
+RUN pip install snakemake
+RUN pip install notebook
 
+RUN echo 'options("repos"="http://cran.rstudio.com")' >> /usr/lib/R/etc/Rprofile.site
 
-#Install tools
-RUN apt-get update \
- && apt-get install -y r-base
-RUN apt-get install python-yaml
-RUN pip3 install jupyter
+RUN Rscript -e "install.packages(c('classInt','cluster','DBI','igraph','knitr','lattice','magrittr','Matrix','mgcv','nlme','pegas','pkgconfig','reshape2','rmarkdown','seqinr','sf','sp','spData','spdep','testthat','units','vegan'))"
+RUN Rscript -e "install.packages('IRkernel')"
+RUN Rscript -e "IRkernel::installspec()"
 
-#Cleanup
-RUN apt-get clean
+COPY src /opt/src
+COPY data /opt/data
 
-# Install the conda environment
-COPY cond_environment.yml /
-RUN conda env create -f /conda_environment.yml && conda clean -a
+EXPOSE 8888
 
-# Add conda installation dir to PATH 
-ENV PATH /opt/conda/envs/cgs-popgen-1.0dev/bin:$PATH
-
-RUN mkdir src
-RUN mkdir notebooks
-
-# install Python modules needed by the Python app
-COPY requirements.txt /usr/src/app/
-RUN pip3 install --no-cache-dir -r /usr/src/app/requirements.txt
-
-# copy files required for the app to run
-COPY app.py /usr/src/app/
-COPY templates/index.html /usr/src/app/templates/
-
-# tell the port number the container should expose
-EXPOSE 5000
-
-# run the application
-CMD ["python", "/usr/src/app/app.py"]
-
-CMD ["jupyter", "notebook", "--port=8888", "--no-browser", "--ip=0.0.0.0", "--allow-root"]
-
+CMD ["/opt/conda/bin/jupyter","notebook","--notebook-dir=/opt/src","--ip='*'","--port=8888","--no-browser","--allow-root"]

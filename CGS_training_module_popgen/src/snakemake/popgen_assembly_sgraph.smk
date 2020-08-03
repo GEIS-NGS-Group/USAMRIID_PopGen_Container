@@ -12,11 +12,6 @@ configfile: "config.yaml"
 
 # User-defined variables
 
-#BASE_DIR = "/home/guest/projects"
-#WDIR = BASE_DIR + "/makona"
-#RDIR = BASE_DIR + "/makona/results"
-
-
 BASE_DIR = config["dir_paths"]["base_dir"]
 WDIR = BASE_DIR +  config["dir_paths"]["work_dir"]
 RDIR = BASE_DIR + config["dir_paths"]["result_dir"]

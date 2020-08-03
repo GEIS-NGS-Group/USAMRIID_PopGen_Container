@@ -2,15 +2,15 @@ ref:
   # bwa index
   hindex: "hg38"
   # gtf index
-  sannotation: "/home/guest/projects/makona/references/GCF_009858895.2_ASM985889v3_genomic.gff"
+  sannotation: "/opt/data/example_data/example_data/references/GCF_009858895.2_ASM985889v3_genomic.gff"
   # Host Reference
   #hreference: "references/GCF_000001405.38_GRCh38.p12_genomic.fna.gz"
   # Species Reference
-  sreference: "/home/guest/projects/makona/references/GCF_009858895.2_ASM985889v3_genomic.fna"
+  sreference: "/opt/data/example_data/references/GCF_009858895.2_ASM985889v3_genomic.fna"
   # sreference index
-  srefindex:  "/home/guest/projects/makona/seqindex/covid"
+  srefindex:  "/opt/data/example_data/seqindex/covid"
   # primer fasta
-  primerfa: "references/pri_adaptors.fa"
+  primerfa: "/opt/data/example_data/references/pri_adaptors.fa"
 parameters:
   # qscore min value
   qvalue: "30"
@@ -21,15 +21,13 @@ parameters:
   # kmerbest
   kmerbest: "27"
   # primer_adaptor fasta
-  pri_adaptors: "/home/guest/projects/makona/references/pri_adaptors.fa"
+  pri_adaptors: "/opt/data/example_data/references/pri_adaptors.fa"
 dir_paths:
     # base_dir path
-    base_dir: "/home/guest/projects/"
+    base_dir: "/opt/data/"
     # reference dir_paths
-    ref_dir_path: "/seqindex/makona"
-    # tool path
-    tool_path: "/home/guest/projects/tools/"
+    ref_dir_path: "/opt/data/example_data/seqindex/makona"
     # work_dir
-    work_dir: "/makona"
+    work_dir: "/opt/data/example_data"
     #result_dir
-    result_dir: "/makona/results"
+    result_dir: "/opt/data/example_data/results"

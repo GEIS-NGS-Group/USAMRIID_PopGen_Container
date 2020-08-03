@@ -5,7 +5,7 @@
 &nbsp;
 
 ---
-### Preliminary
+Preliminary
 ---
 
 &nbsp;
@@ -54,7 +54,7 @@
 
 - How much RAM/Memory will I need to run this program?
      
-     This program will require minimal RAM and memory.
+     This program will require minimal RAM.
   
 &nbsp;
   
@@ -70,7 +70,7 @@
 &nbsp;
 
 ---
-### Shell module
+Shell module
 ---
 
 
