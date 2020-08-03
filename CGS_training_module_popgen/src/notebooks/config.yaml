@@ -26,8 +26,8 @@ dir_paths:
     # base_dir path
     base_dir: "/opt/data/"
     # reference dir_paths
-    ref_dir_path: "/opt/data/example_data/seqindex/makona"
+    ref_dir_path: "example_data/seqindex/makona"
     # work_dir
-    work_dir: "/opt/data/example_data"
+    work_dir: "example_data"
     #result_dir
-    result_dir: "/opt/data/example_data/results"
+    result_dir: "example_data/results"

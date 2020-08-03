@@ -33,6 +33,8 @@ RUN Rscript -e "install.packages(c('classInt','cluster','DBI','igraph','knitr','
 RUN Rscript -e "install.packages('IRkernel')"
 RUN Rscript -e "IRkernel::installspec()"
 
+RUN mkdir -p /opt/data/example_data/results
+
 COPY src /opt/src
 COPY data /opt/data
 
