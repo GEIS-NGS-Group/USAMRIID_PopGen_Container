@@ -47,6 +47,13 @@ To login to container shell:
 docker exec -it popgenriid bash
 ```
 
+To copy from container after making changes in browser:
+```
+cd CGS_training_module_popgen/src/notebooks 
+docker cp popgenriid:/opt/src/notebooks/CGS-Training-Module1.ipynb .
+
+```
+
 ## FAQ and Glossary
 * [FAQ](https://github.com/rainakumar/CGS_popgen_training_module/blob/master/FAQ.md)
 * [Glossary](https://github.com/rainakumar/CGS_popgen_training_module/blob/master/glossary.md)
