@@ -13,8 +13,46 @@ Infectious diseases are the most common cause of major fatalities of human life.
 
 These instructions will cover usage information and for the docker container 
 
-## For downloading build docker image please use following URL and instructions
-* [Docker](https://hub.docker.com/repository/docker/rkumar23/cgs-popgen-2020)
+## Create docker image from source
+```
+cd CGS_training_module_popgen
+docker build -t popgenriid .
+```
+
+## Run docker
+```
+docker run -p 8888:8888 --name popgenriid popgenriid
+```
+Once you run the container, you should see an output such as this:
+```
+[I 00:27:16.824 NotebookApp] Writing notebook server cookie secret to /root/.local/share/jupyter/runtime/notebook_cookie_secret
+[W 00:27:17.152 NotebookApp] WARNING: The notebook server is listening on all IP addresses and not using encryption. This is not recommended.
+[I 00:27:17.154 NotebookApp] Serving notebooks from local directory: /opt/src
+[I 00:27:17.154 NotebookApp] Jupyter Notebook 6.1.0 is running at:
+[I 00:27:17.154 NotebookApp] http://41f49f80e977:8888/?token=27f77841f0961a2e9ad084bfa606ae7dbf7767097c853ed3
+[I 00:27:17.154 NotebookApp]  or http://127.0.0.1:8888/?token=27f77841f0961a2e9ad084bfa606ae7dbf7767097c853ed3
+[I 00:27:17.154 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 00:27:17.159 NotebookApp] 
+    
+    To access the notebook, open this file in a browser:
+        file:///root/.local/share/jupyter/runtime/nbserver-1-open.html
+    Or copy and paste one of these URLs:
+        http://41f49f80e977:8888/?token=27f77841f0961a2e9ad084bfa606ae7dbf7767097c853ed3
+     or http://127.0.0.1:8888/?token=27f77841f0961a2e9ad084bfa606ae7dbf7767097c853ed3
+```
+To access the Jupyter Notebook, open a supported web browser and go to the link shown in the output.
+
+To login to container shell:
+```
+docker exec -it popgenriid bash
+```
+
+To copy from container after making changes in browser:
+```
+cd CGS_training_module_popgen/src/notebooks 
+docker cp popgenriid:/opt/src/notebooks/CGS-Training-Module1.ipynb .
+
+```
 
 ## FAQ and Glossary
 * [FAQ](https://github.com/rainakumar/CGS_popgen_training_module/blob/master/FAQ.md)

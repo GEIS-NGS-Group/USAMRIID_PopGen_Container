@@ -12,11 +12,6 @@ configfile: "config.yaml"
 
 # User-defined variables
 
-#BASE_DIR = "/home/guest/projects"
-#WDIR = BASE_DIR + "/makona"
-#RDIR = BASE_DIR + "/makona/results"
-
-
 BASE_DIR = config["dir_paths"]["base_dir"]
 WDIR = BASE_DIR +  config["dir_paths"]["work_dir"]
 RDIR = BASE_DIR + config["dir_paths"]["result_dir"]
@@ -83,8 +78,8 @@ rule trimmomatic:
 		fastq2up="results/primer_adapt_removed/{smp}_R2_unpaired.fastq",
 		log2="results/primer_adapt_removed/{smp}_trimmolog.txt"
 	params:
-		adaptors=config["parameters"]["pri_adaptors"],logprefix=config["parameters"]["logstr"],tool_path=config["dir_paths"]["tool_path"]
+		adaptors=config["parameters"]["pri_adaptors"],logprefix=config["parameters"]["logstr"]
 	message: """--- Cutting adaptors/primers and quality trimming reads head and tail of sequence reads."""
 	shell: """
-	    time java -jar {params.tool_path}/Trimmomatic-0.39/trimmomatic-0.39.jar PE -threads 10 -trimlog {params.logprefix} {input.fwd} {input.rev} {output.fastq1p} {output.fastq1up} {output.fastq2p} {output.fastq2up} ILLUMINACLIP:{params.adaptors}:2:30:10 LEADING:2 TRAILING:2 SLIDINGWINDOW:5:20 MINLEN:20 > {output.log2}
+	    time trimmomatic PE -threads 10 -trimlog {params.logprefix} {input.fwd} {input.rev} {output.fastq1p} {output.fastq1up} {output.fastq2p} {output.fastq2up} ILLUMINACLIP:{params.adaptors}:2:30:10 LEADING:2 TRAILING:2 SLIDINGWINDOW:5:20 MINLEN:20 > {output.log2}
 	"""

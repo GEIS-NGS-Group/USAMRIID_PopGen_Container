@@ -12,11 +12,6 @@ configfile: "config.yaml"
 
 # User-defined variables
 
-#BASE_DIR = "/home/guest/projects"
-#WDIR = BASE_DIR + "/makona"
-#RDIR = BASE_DIR + "/makona/results"
-
-
 BASE_DIR = config["dir_paths"]["base_dir"]
 WDIR = BASE_DIR +  config["dir_paths"]["work_dir"]
 RDIR = BASE_DIR + config["dir_paths"]["result_dir"]
@@ -85,11 +80,10 @@ rule assembly_predictgene:
 		sannotationf=config["ref"]["sannotation"]
 	params: 
 		contigfile="results/velvet_assembly/{smp}_AssemRef/contigs.fa",
-		tool_path=config["dir_paths"]["tool_path"],
 		assemblystatrepo="results/assembl_stats/{smp}_reference_stats"
 	output:
 		logfile="results/assembl_stats/{smp}_logfile_assembly_predictgene.txt"
 	message: """ ---Creating quality stats on assembly """
 	shell: """
-		time {params.tool_path}/quast/quast.py {params.contigfile} -R {input.sreferencef} --features {input.sannotationf} -o {params.assemblystatrepo} -m 300  --glimmer > {output.logfile}
+		time quast {params.contigfile} -R {input.sreferencef} --features {input.sannotationf} -o {params.assemblystatrepo} -m 300  --glimmer > {output.logfile}
 	"""
