@@ -23,6 +23,7 @@ RUN conda install mummer -y --quiet -c bioconda
 RUN conda install trimmomatic -y --quiet -c bioconda
 RUN conda install quast -y --quiet -c bioconda
 RUN conda install mafft -y --quiet -c bioconda
+RUN conda install velvet -y --quiet -c bioconda
 
 RUN pip install snakemake
 RUN pip install notebook
