@@ -9,6 +9,8 @@ Infectious diseases are the most common cause of major fatalities of human life.
 
 ## For cgs-popgen-2020 Docker Image build follow instructions
 
+docker pull rkumar23/popgen_training_module:latest
+
 ## Getting Started
 
 These instructions will cover usage information and for the docker container 
